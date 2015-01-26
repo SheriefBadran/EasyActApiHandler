@@ -1,1 +1,15 @@
 <h1>Api-Key Dashboard</h1>
+
+<div>
+  <% if user_signed_in? %>
+      <p>Email: <%= current_user.email %></p>
+
+      <% if current_user.api_key %>
+          <p>api_key: <%= current_user.api_key %></p>
+          <%= link_to 'Delete Api Key', edit_dashboard_path('key')  %>
+      <% else %>
+          <p>api_key: No key registered on <%= current_user.email %></p>
+          <%= link_to 'Generate New Api Key', edit_dashboard_path('key') %>
+      <% end %>
+  <% end %>
+</div>

@@ -19,5 +19,5 @@ class User < ActiveRecord::Base
   def delete_api_key
     self.api_key = nil
   end
-  
+
 end
