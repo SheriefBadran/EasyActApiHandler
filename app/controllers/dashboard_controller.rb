@@ -2,7 +2,6 @@ class DashboardController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-
   end
 
   def edit
@@ -18,5 +17,4 @@ class DashboardController < ApplicationController
       redirect_to(root_path, :notice => 'Api key was successfully generated.')
     end
   end
-
 end
