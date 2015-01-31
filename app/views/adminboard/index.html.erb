@@ -1,12 +1,12 @@
-<div>
-  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<div id="adminboard">
+  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-success' %>
   <h1>Application Owners</h1>
-    <ul class ="user-list">
+    <ul class ="list-group">
       <% @users.each do |u| %>
-        <li>
-          <p><%= u.email %></p>
-          <p><%= u.api_key %></p>
-          <p><%= link_to 'Revoke', adminboard_path(u) %></p>
+        <li class="list-group-item">
+          <p><span class="glyphicon glyphicon-envelope"></span> <%= u.email %></p>
+          <p><span class="fa fa-key"></span> <%= u.api_key %></p>
+          <p><%= link_to 'Revoke', adminboard_path(u), class: 'btn btn-danger' %></p>
         </li>
       <% end %>
     </ul>
