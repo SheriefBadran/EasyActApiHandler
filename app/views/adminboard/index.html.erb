@@ -1,0 +1,13 @@
+<div>
+  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+  <h1>Application Owners</h1>
+    <ul class ="user-list">
+      <% @users.each do |u| %>
+        <li>
+          <p><%= u.email %></p>
+          <p><%= u.api_key %></p>
+          <p><%= link_to 'Revoke', adminboard_path(u) %></p>
+        </li>
+      <% end %>
+    </ul>
+</div>

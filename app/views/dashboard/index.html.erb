@@ -1,7 +1,8 @@
-<h1>Api-Key Dashboard</h1>
-
 <div>
   <% if user_signed_in? %>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+
+      <h1>Api-Key Dashboard</h1>
       <p>Email: <%= current_user.email %></p>
 
       <% if current_user.api_key %>

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :dashboard
+  resources :dashboard, only: [:index, :edit]
+  resources :adminboard, only: [:index, :destroy]
 
   root to: 'home#index'
+
+  get '/adminboard/:id' => 'adminboard#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
