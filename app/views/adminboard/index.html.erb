@@ -1,7 +1,9 @@
 <div id="adminboard">
-  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-success' %>
-  <h1>Application Owners</h1>
     <ul class ="list-group">
+      <header>
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-success pull-right' %>
+        <h1>Application owners</h1>
+      </header>
       <% @users.each do |u| %>
         <li class="list-group-item">
           <p><span class="glyphicon glyphicon-envelope"></span> <%= u.email %></p>
