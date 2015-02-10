@@ -22,3 +22,5 @@ admin = User.create({
                         api_key: '9864e2f2-212c-4984-8580-fdd6f6a00b95',
                         admin: 'true'
                     })
+user.save
+admin.save
