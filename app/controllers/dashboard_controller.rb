@@ -1,5 +1,10 @@
 class DashboardController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :validate_role
+
+  def validate_role
+    redirect_to '/adminboard', :notice => 'Access denied.', status: :forbidden if current_user.admin
+  end
 
   def index
   end
